@@ -1,22 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
 
-<VBox spacing="15" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" style="-fx-padding: 20;">
-    <Label text="Gestion du Parc Automobile" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.VehiculesController" style="-fx-background-color: #f4f4f4;">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
 
-    <HBox spacing="10">
-        <TextField fx:id="txtMatricule" promptText="Matricule (ex: GA-123)" />
-        <ComboBox fx:id="comboCategorie" promptText="Catégorie" prefWidth="150" />
-        <Button text="Ajouter Véhicule" style="-fx-background-color: #3498db; -fx-text-fill: white;" />
-    </HBox>
+    <children>
+        <Label text="Gestion du Parc Automobile" style="-fx-text-fill: #2c3e50;">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
 
-    <TableView fx:id="tableVehicules" VBox.vgrow="ALWAYS">
-        <columns>
-            <TableColumn text="ID" prefWidth="50" />
-            <TableColumn text="Matricule" prefWidth="120" />
-            <TableColumn text="Modèle" prefWidth="150" />
-            <TableColumn text="Statut" prefWidth="100" />
-        </columns>
-    </TableView>
+        <HBox spacing="15.0" alignment="CENTER_LEFT">
+            <children>
+                <TextField fx:id="txtMatricule" promptText="Matricule (ex: GA-123)" prefWidth="150.0" />
+                <ComboBox fx:id="comboCategorie" promptText="Catégorie" prefWidth="150.0" />
+
+                <Button text="Ajouter" onAction="#ajouterVehicule"
+                        style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" />
+
+                <Button text="Supprimer" onAction="#supprimerVehicule"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" />
+            </children>
+        </HBox>
+
+        <TableView fx:id="tableVehicules" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="col_id" prefWidth="60.0" text="ID" />
+                <TableColumn fx:id="col_matricule" prefWidth="150.0" text="Matricule" />
+                <TableColumn fx:id="col_modele" prefWidth="150.0" text="Modèle" />
+                <TableColumn fx:id="col_statut" prefWidth="120.0" text="Statut" />
+            </columns>
+        </TableView>
+
+        <Label text="Sélectionnez une ligne dans le tableau pour la supprimer." style="-fx-font-style: italic; -fx-text-fill: #7f8c8d;" />
+    </children>
 </VBox>
