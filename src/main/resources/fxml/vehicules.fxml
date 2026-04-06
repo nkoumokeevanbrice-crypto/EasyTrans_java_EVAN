@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" style="-fx-padding: 20;">
+    <Label text="Gestion du Parc Automobile" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+
+    <HBox spacing="10">
+        <TextField fx:id="txtMatricule" promptText="Matricule (ex: GA-123)" />
+        <ComboBox fx:id="comboCategorie" promptText="Catégorie" prefWidth="150" />
+        <Button text="Ajouter Véhicule" style="-fx-background-color: #3498db; -fx-text-fill: white;" />
+    </HBox>
+
+    <TableView fx:id="tableVehicules" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="ID" prefWidth="50" />
+            <TableColumn text="Matricule" prefWidth="120" />
+            <TableColumn text="Modèle" prefWidth="150" />
+            <TableColumn text="Statut" prefWidth="100" />
+        </columns>
+    </TableView>
+</VBox>
