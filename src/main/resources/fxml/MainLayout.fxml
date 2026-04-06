@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="mainPane" prefHeight="600.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <left>
+        <VBox spacing="15.0" style="-fx-background-color: #2c3e50; -fx-padding: 20;" prefWidth="200.0">
+            <Label text="EASY TRANS" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+            <Button text="Dashboard" maxWidth="Infinity"/>
+            <Button text="Véhicules" maxWidth="Infinity"/>
+            <Button text="Paramètres" maxWidth="Infinity"/>
+        </VBox>
+    </left>
+    <center>
+        <StackPane fx:id="contentArea">
+            <Label text="Bienvenue dans l'application" />
+        </StackPane>
+    </center>
+</BorderPane>

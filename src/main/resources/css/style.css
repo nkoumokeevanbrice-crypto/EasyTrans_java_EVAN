@@ -1,0 +1,10 @@
+.button {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+    -fx-background-radius: 10; /* Coins arrondis exigés */
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #1abc9c; /* Effet de survol exigé */
+}
